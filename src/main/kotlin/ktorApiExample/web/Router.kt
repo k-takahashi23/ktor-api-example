@@ -8,7 +8,7 @@ import io.ktor.routing.*
 fun Routing.users(findAllUsersUsecase: FindAllUsersUsecase) {
     route("users") {
         get {
-            val response = findAllUsersUsecase.invoke()
+            val response = findAllUsersUsecase.invoke({})
             call.respond(response)
         }
     }
