@@ -1,4 +1,4 @@
-package crudApi.core.domain.entities
+package ktorApiExample.core.domain.entities
 
 import kotlinx.serialization.Serializable
 

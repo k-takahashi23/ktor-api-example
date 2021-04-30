@@ -1,6 +1,6 @@
-package crudApi.web
+package ktorApiExample.web
 
-import crudApi.core.application.usecases.FindAllUsersUsecase
+import ktorApiExample.core.application.usecases.FindAllUsersUsecase
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*

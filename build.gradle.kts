@@ -11,7 +11,7 @@ repositories {
 }
 
 application {
-  mainClass.set("crudApi.AppKt")
+  mainClass.set("ktorApiExample.AppKt")
 }
 
 dependencies {

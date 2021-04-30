@@ -1,4 +1,4 @@
-package crudApi
+package ktorApiExample
 
 import io.ktor.application.*
 import io.ktor.features.*
@@ -6,9 +6,9 @@ import io.ktor.routing.*
 import io.ktor.serialization.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import crudApi.core.application.usecases.FindAllUsersUsecase
-import crudApi.infrastructure.repositories.UsersRepository
-import crudApi.web.users
+import ktorApiExample.core.application.usecases.FindAllUsersUsecase
+import ktorApiExample.infrastructure.repositories.UsersRepository
+import ktorApiExample.web.users
 
 fun main() {
   val usersRepository = UsersRepository()

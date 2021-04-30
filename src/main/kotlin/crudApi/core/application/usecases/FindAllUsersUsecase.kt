@@ -1,7 +1,7 @@
-package crudApi.core.application.usecases
+package ktorApiExample.core.application.usecases
 
-import crudApi.core.domain.entities.User
-import crudApi.infrastructure.repositories.UsersRepository
+import ktorApiExample.core.domain.entities.User
+import ktorApiExample.infrastructure.repositories.UsersRepository
 
 class FindAllUsersUsecase(private val usersRepository: UsersRepository) {
     fun handle(): List<User> {

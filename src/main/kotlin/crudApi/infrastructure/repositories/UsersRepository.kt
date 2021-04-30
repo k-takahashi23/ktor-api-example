@@ -1,6 +1,6 @@
-package crudApi.infrastructure.repositories
+package ktorApiExample.infrastructure.repositories
 
-import crudApi.core.domain.entities.User
+import ktorApiExample.core.domain.entities.User
 
 class UsersRepository {
   fun findAll(): List<User> {
