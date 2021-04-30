@@ -4,8 +4,7 @@ import ktorApiExample.core.domain.entities.User
 import ktorApiExample.infrastructure.repositories.UsersRepository
 
 class FindAllUsersUsecase(private val usersRepository: UsersRepository) {
-    fun handle(): List<User> {
-        print("FindAllUsersUsecase.handle()")
+    fun invoke(): List<User> {
         return usersRepository.findAll()
     }
 }

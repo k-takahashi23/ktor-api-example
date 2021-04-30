@@ -11,15 +11,15 @@ import ktorApiExample.infrastructure.repositories.UsersRepository
 import ktorApiExample.web.users
 
 fun main() {
-  val usersRepository = UsersRepository()
-  val findAllUsersUsecase = FindAllUsersUsecase(usersRepository)
+    val usersRepository = UsersRepository()
+    val findAllUsersUsecase = FindAllUsersUsecase(usersRepository)
 
-  embeddedServer(Netty, port = 8000) {
-    install(ContentNegotiation) {
-      json()
-    }
-    install(Routing) {
-      users(findAllUsersUsecase)
-    }
-  }.start(true)
+    embeddedServer(Netty, port = 8000) {
+        install(ContentNegotiation) {
+            json()
+        }
+        install(Routing) {
+            users(findAllUsersUsecase)
+        }
+    }.start(true)
 }
