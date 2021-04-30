@@ -1,10 +1,10 @@
-package org.example.crudApi.app.infrastructure.repositories
+package crudApi.infrastructure.repositories
 
-import org.example.crudApi.app.core.domain.entities.User
+import crudApi.core.domain.entities.User
 
 class UsersRepository {
   fun findAll(): List<User> {
-    print("UsersRepository.findAll()");
-    return listOf(User("id1", "田中太郎", "tanaka@mail.com"));
+    print("UsersRepository.findAll()")
+    return listOf(User("id1", "田中太郎", "tanaka@mail.com"))
   }
 }

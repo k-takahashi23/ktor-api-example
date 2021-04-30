@@ -1,5 +1,6 @@
 plugins {
-  id("org.jetbrains.kotlin.jvm") version "1.4.10"
+  id("org.jetbrains.kotlin.jvm") version "1.5.0"
+  id("org.jetbrains.kotlin.plugin.serialization") version "1.5.0"
   id("application")
 }
 
@@ -10,13 +11,13 @@ repositories {
 }
 
 application {
-  mainClass.set("org.example.crudApi.app.AppKt")
+  mainClass.set("crudApi.AppKt")
 }
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib")
-  implementation("io.ktor:ktor-server-core:1.5.3")
-  implementation("io.ktor:ktor-server-netty:1.5.3")
-  implementation("io.ktor:ktor-serialization:1.5.3")
+  implementation("io.ktor:ktor-server-core:1.5.4")
+  implementation("io.ktor:ktor-server-netty:1.5.4")
+  implementation("io.ktor:ktor-serialization:1.5.4")
   implementation("ch.qos.logback:logback-classic:1.2.3")
 }

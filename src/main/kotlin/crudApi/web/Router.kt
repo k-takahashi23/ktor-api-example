@@ -1,15 +1,15 @@
-package org.example.crudApi.app.web
+package crudApi.web
 
-import io.ktor.routing.Routing
-import io.ktor.routing.delete
-import io.ktor.routing.get
-import io.ktor.routing.post
-import io.ktor.routing.put
-import io.ktor.routing.route
-import org.example.crudApi.app.core.application.usecases.FindAllUsersUsecase
+import crudApi.core.application.usecases.FindAllUsersUsecase
+import io.ktor.application.*
+import io.ktor.response.*
+import io.ktor.routing.*
 
 fun Routing.users(findAllUsersUsecase: FindAllUsersUsecase) {
   route("users") {
-    get { findAllUsersUsecase.handle() }
+    get {
+      val response = findAllUsersUsecase.handle()
+      call.respond(response)
+    }
   }
 }
