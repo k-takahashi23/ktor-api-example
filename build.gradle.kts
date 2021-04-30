@@ -20,7 +20,3 @@ dependencies {
   implementation("io.ktor:ktor-serialization:1.5.3")
   implementation("ch.qos.logback:logback-classic:1.2.3")
 }
-
-tasks.wrapper<Wrapper> {
-  gradleVersion = "6.8.3"
-}
