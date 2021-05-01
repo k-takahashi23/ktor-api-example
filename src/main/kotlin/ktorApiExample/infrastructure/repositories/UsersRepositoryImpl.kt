@@ -15,4 +15,9 @@ class UsersRepositoryImpl: UsersRepository {
             null
         }
     }
+
+    override fun add(entity: User) {
+        println("Add User!")
+        println(entity)
+    }
 }
