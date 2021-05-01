@@ -1,6 +1,5 @@
 package ktorApiExample.core.application.seedwork
 
-interface Usecase {
-    // TODO: Remove Any
-    fun invoke(request: Any): Any
+interface Usecase<TRequest: UsecaseRequest, TResponse: UsecaseResponse> {
+    fun invoke(request: TRequest): TResponse
 }

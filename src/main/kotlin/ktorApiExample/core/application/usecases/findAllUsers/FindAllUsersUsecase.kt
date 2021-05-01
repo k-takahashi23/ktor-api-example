@@ -1,0 +1,5 @@
+package ktorApiExample.core.application.usecases.findAllUsers
+
+import ktorApiExample.core.application.seedwork.Usecase
+
+interface FindAllUsersUsecase: Usecase<FindAllUsersUsecaseRequest, FindAllUsersUsecaseResponse>

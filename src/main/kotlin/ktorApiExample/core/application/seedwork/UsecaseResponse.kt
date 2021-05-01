@@ -1,0 +1,3 @@
+package ktorApiExample.core.application.seedwork
+
+interface UsecaseResponse
