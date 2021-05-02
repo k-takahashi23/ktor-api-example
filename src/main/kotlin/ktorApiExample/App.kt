@@ -11,21 +11,21 @@ import io.ktor.server.netty.*
 import ktorApiExample.web.controllers.users
 import org.kodein.di.ktor.di
 
-fun main() {
-    embeddedServer(Netty, port = 8000) {
-        di {
-            bindServices()
+fun Application.module() {
+    di {
+        bindServices()
+    }
+    install(ContentNegotiation) {
+        json()
+    }
+    install(StatusPages) {
+        exception<Throwable> {
+            call.respond(HttpStatusCode.InternalServerError)
         }
-        install(ContentNegotiation) {
-            json()
-        }
-        install(StatusPages) {
-            exception<Throwable> {
-                call.respond(HttpStatusCode.InternalServerError)
-            }
-        }
-        install(Routing) {
-            users()
-        }
-    }.start(true)
+    }
+    install(Routing) {
+        users()
+    }
 }
+
+fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
