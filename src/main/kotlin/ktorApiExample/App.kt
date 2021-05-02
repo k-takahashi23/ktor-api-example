@@ -2,6 +2,8 @@ package ktorApiExample
 
 import io.ktor.application.*
 import io.ktor.features.*
+import io.ktor.http.*
+import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.serialization.*
 import io.ktor.server.engine.*
@@ -11,11 +13,16 @@ import org.kodein.di.ktor.di
 
 fun main() {
     embeddedServer(Netty, port = 8000) {
+        di {
+            bindServices()
+        }
         install(ContentNegotiation) {
             json()
         }
-        di {
-            bindServices()
+        install(StatusPages) {
+            exception<Throwable> {
+                call.respond(HttpStatusCode.InternalServerError)
+            }
         }
         install(Routing) {
             users()
