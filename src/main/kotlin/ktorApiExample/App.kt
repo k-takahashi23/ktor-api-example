@@ -8,7 +8,7 @@ import io.ktor.routing.*
 import io.ktor.serialization.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import ktorApiExample.web.controllers.users
+import ktorApiExample.web.routes.users
 import org.kodein.di.ktor.di
 
 fun Application.module() {
