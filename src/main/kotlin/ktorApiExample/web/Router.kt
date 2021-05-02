@@ -10,13 +10,15 @@ import ktorApiExample.core.application.usecases.findAllUsers.FindAllUsersUsecase
 import ktorApiExample.core.application.usecases.findAllUsers.FindAllUsersUsecaseRequest
 import ktorApiExample.core.application.usecases.findUserById.FindUserByIdUsecase
 import ktorApiExample.core.application.usecases.findUserById.FindUserByIdUsecaseRequest
+import org.kodein.di.instance
+import org.kodein.di.ktor.di
 
-fun Routing.users(
-    findAllUsersUsecase: FindAllUsersUsecase,
-    addUserUsecase: AddUserUsecase,
-    findUserByIdUsecase: FindUserByIdUsecase
-) {
-    route("/users") {
+fun Routing.users() {
+    val findAllUsersUsecase by di().instance<FindAllUsersUsecase>()
+    val addUserUsecase by di().instance<AddUserUsecase>()
+    val findUserByIdUsecase by di().instance<FindUserByIdUsecase>()
+
+    route("/api/v1/users") {
         get {
             val request = FindAllUsersUsecaseRequest()
             val response = findAllUsersUsecase.invoke(request)
@@ -28,7 +30,7 @@ fun Routing.users(
             call.respond(response)
         }
     }
-    route("/users/{id}") {
+    route("/api/v1/users/{id}") {
         get {
             val id = call.parameters["id"]
             if (id !is String) {
