@@ -1,4 +1,4 @@
-package ktorApiExample.web
+package ktorApiExample.web.controllers
 
 import io.ktor.application.*
 import io.ktor.request.*

@@ -6,7 +6,7 @@ import io.ktor.routing.*
 import io.ktor.serialization.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import ktorApiExample.web.users
+import ktorApiExample.web.controllers.users
 import org.kodein.di.ktor.di
 
 fun main() {
